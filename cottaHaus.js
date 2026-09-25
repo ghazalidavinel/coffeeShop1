@@ -287,7 +287,6 @@ const WA_NUMBER = "628123456780"; // nomor WhatsApp toko (contoh)
 
 /* ===================== STATE ===================== */
 let activeCat = "Semua";
-let cart = {}; // name -> {item, qty}
 
 /* ===================== NAV ===================== */
 function showSection(id) {
@@ -350,19 +349,12 @@ function renderMenu() {
         <p>${m.desc}</p>
         <div class="menu-foot">
           <span class="price">${fmt(m.price)}</span>
-          <button class="add-btn" data-add="${m.name}">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
-            Tambah
-          </button>
         </div>
       </div>
     </div>
   `,
     )
     .join("");
-  grid.querySelectorAll("[data-add]").forEach((b) => {
-    b.addEventListener("click", () => addToCart(b.dataset.add));
-  });
 }
 
 /* ===================== BRANCH LIST ===================== */
@@ -444,126 +436,52 @@ function renderBranchDetail(id) {
   showSection("branch-detail");
 }
 
-/* ===================== CART ===================== */
-function addToCart(name) {
-  const item = MENU.find((m) => m.name === name);
-  if (!item) return;
-  if (!cart[name]) cart[name] = { item, qty: 0 };
-  cart[name].qty += 1;
-  renderCart();
-  showToast(`${name} masuk keranjang`);
-}
-function changeQty(name, delta) {
-  if (!cart[name]) return;
-  cart[name].qty += delta;
-  if (cart[name].qty <= 0) delete cart[name];
-  renderCart();
-}
-function cartCountTotal() {
-  return Object.values(cart).reduce((s, c) => s + c.qty, 0);
-}
-function cartPriceTotal() {
-  return Object.values(cart).reduce((s, c) => s + c.qty * c.item.price, 0);
-}
-function renderCart() {
-  const wrap = document.getElementById("cartItems");
-  const entries = Object.entries(cart);
-  if (entries.length === 0) {
-    wrap.innerHTML = `<div class="cart-empty">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M3 4h2l2.6 12.4A2 2 0 009.5 18h7.9a2 2 0 001.96-1.6L21 8H6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="21" r="1.4" fill="currentColor"/><circle cx="18" cy="21" r="1.4" fill="currentColor"/></svg>
-      Keranjangmu masih kosong.<br>Yuk tambahkan menu favoritmu.
-    </div>`;
-  } else {
-    wrap.innerHTML = entries
-      .map(
-        ([name, c]) => `
-      <div class="cart-item">
-        <div>
-          <div class="ci-name">${name}</div>
-          <div class="ci-price">${fmt(c.item.price)}</div>
-        </div>
-        <div class="qty-ctrl">
-          <button data-dec="${name}">−</button>
-          <span>${c.qty}</span>
-          <button data-inc="${name}">+</button>
-        </div>
-      </div>
-    `,
-      )
-      .join("");
-    wrap
-      .querySelectorAll("[data-inc]")
-      .forEach((b) =>
-        b.addEventListener("click", () => changeQty(b.dataset.inc, 1)),
-      );
-    wrap
-      .querySelectorAll("[data-dec]")
-      .forEach((b) =>
-        b.addEventListener("click", () => changeQty(b.dataset.dec, -1)),
-      );
-  }
-  document.getElementById("cartTotal").textContent = fmt(cartPriceTotal());
-  const count = cartCountTotal();
-  const badge = document.getElementById("cartCount");
-  badge.style.display = count > 0 ? "flex" : "none";
-  badge.textContent = count;
-  document.getElementById("checkoutBtn").style.opacity = count > 0 ? 1 : 0.45;
-  updateCheckoutLink();
-}
-function updateCheckoutLink() {
-  const branchName = document.getElementById("branchSelect").value;
-  const note = document.getElementById("noteField").value.trim();
-  const entries = Object.entries(cart);
-  let msg = `Halo Cotta Haus, saya ingin pesan:%0A`;
-  entries.forEach(([name, c]) => {
-    msg += `- ${name} x${c.qty} (${fmt(c.item.price * c.qty)})%0A`;
-  });
-  msg += `%0ATotal: ${fmt(cartPriceTotal())}%0ACabang: ${branchName}`;
-  if (note) msg += `%0ACatatan: ${note}`;
-  document.getElementById("checkoutBtn").href =
-    `https://wa.me/${WA_NUMBER}?text=${msg}`;
-}
-document
-  .getElementById("branchSelect")
-  .addEventListener("change", updateCheckoutLink);
-document
-  .getElementById("noteField")
-  .addEventListener("input", updateCheckoutLink);
-
-/* ===================== DRAWER ===================== */
-const drawer = document.getElementById("cartDrawer");
-const overlay = document.getElementById("overlay");
-function openCart() {
-  drawer.classList.add("open");
-  overlay.classList.add("open");
-}
-function closeCartFn() {
-  drawer.classList.remove("open");
-  overlay.classList.remove("open");
-}
-document.getElementById("openCart").addEventListener("click", openCart);
-document.getElementById("closeCart").addEventListener("click", closeCartFn);
-overlay.addEventListener("click", closeCartFn);
-
-/* ===================== TOAST ===================== */
-let toastTimer;
-function showToast(text) {
-  const t = document.getElementById("toast");
-  document.getElementById("toastText").textContent = text;
-  t.classList.add("show");
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
-}
-
 /* ===================== INIT ===================== */
-function initBranchSelect() {
-  const sel = document.getElementById("branchSelect");
-  sel.innerHTML = BRANCHES.map(
-    (b) =>
-      `<option value="${b.name} — ${b.city}">${b.name} — ${b.city}</option>`,
-  ).join("");
-}
 renderMenu();
 renderBranchGrid();
-initBranchSelect();
-renderCart();
+
+/* ===================== HOME MENU CAROUSEL ===================== */
+let mcIndex = 0;
+let mcPhotos = [];
+function renderMenuCarousel() {
+  const track = document.getElementById("mcTrack");
+  if (!track) return;
+  mcPhotos = [...new Set(MENU.map((m) => m.img))];
+  track.innerHTML = mcPhotos
+    .map(
+      (img, i) => `
+    <div class="mc-slide${i === 0 ? " active" : ""}">
+      <img src="${img}" alt="Cotta Haus" />
+    </div>`,
+    )
+    .join("");
+}
+function mcShow(newIndex, dir) {
+  const slides = document.querySelectorAll(".mc-slide");
+  if (!slides.length) return;
+  const oldIndex = mcIndex;
+  const target = (newIndex + mcPhotos.length) % mcPhotos.length;
+  if (target === oldIndex) return;
+  const oldEl = slides[oldIndex];
+  const newEl = slides[target];
+
+  newEl.style.transition = "none";
+  newEl.style.transform = dir === "prev" ? "translateX(-100%)" : "translateX(100%)";
+  newEl.classList.add("active");
+  void newEl.offsetWidth;
+  newEl.style.transition = "";
+
+  requestAnimationFrame(() => {
+    newEl.style.transform = "translateX(0)";
+    oldEl.style.transform = dir === "prev" ? "translateX(100%)" : "translateX(-100%)";
+    oldEl.classList.remove("active");
+  });
+  mcIndex = target;
+}
+renderMenuCarousel();
+document
+  .getElementById("mcPrev")
+  ?.addEventListener("click", () => mcShow(mcIndex - 1, "prev"));
+document
+  .getElementById("mcNext")
+  ?.addEventListener("click", () => mcShow(mcIndex + 1, "next"));

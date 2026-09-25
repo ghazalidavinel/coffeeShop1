@@ -6,7 +6,7 @@
     <title>Cotta Haus — Specialty Coffee</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="cottaHaus.css" />
@@ -32,104 +32,31 @@
       </div>
     </header>
 
-    <!-- Floating cart trigger: cart removed from top bar to match the reference header -->
-    <button class="fab-cart" id="openCart">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M3 4h2l2.6 12.4A2 2 0 009.5 18h7.9a2 2 0 001.96-1.6L21 8H6"
-          stroke="#fff"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <circle cx="10" cy="21" r="1.4" fill="#fff" />
-        <circle cx="18" cy="21" r="1.4" fill="#fff" />
-      </svg>
-      <span class="cart-badge" id="cartCount" style="display: none">0</span>
-    </button>
-
     <!-- ================= HOME ================= -->
     <section id="home" class="active">
-      <div class="hero">
-        <div class="wrap hero-grid">
-          <div>
-            <span class="eyebrow">Specialty Coffee — Est. 2019</span>
-            <h1>
-              Ruang &amp; Rasa dalam <em class="accent">Harmoni</em> yang
-              Presisi.
-            </h1>
-            <p class="lead">
-              Cotta Haus menyajikan kopi spesialitas nusantara dengan dedikasi
-              pada setiap seduhan — dari biji Gayo hingga Kintamani, disangrai
-              presisi, diseduh dengan tenang.
-            </p>
-            <div class="hero-cta">
-              <button class="btn btn-primary" data-nav="order">
-                Lihat Menu
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M5 12h14M13 6l6 6-6 6"
-                    stroke="#fff"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <button class="btn btn-ghost" data-nav="branches">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M12 22s7-6.1 7-12a7 7 0 10-14 0c0 5.9 7 12 7 12z"
-                    stroke="#152C46"
-                    stroke-width="1.7"
-                  />
-                  <circle
-                    cx="12"
-                    cy="10"
-                    r="2.4"
-                    stroke="#152C46"
-                    stroke-width="1.7"
-                  />
-                </svg>
-                Cari Cabang
-              </button>
-            </div>
-            <div class="stat-row">
-              <div class="stat"><b>05</b><span>Cabang</span></div>
-              <div class="stat"><b>16</b><span>Menu Pilihan</span></div>
-              <div class="stat"><b>04</b><span>Origin Biji</span></div>
-            </div>
-          </div>
-          <div class="hero-art">
-            <div class="hero-photo">
-              <img
-                src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80"
-                alt="Barista menyeduh kopi"
-              />
-              <div class="brewing-card">
-                <div>
-                  <span class="eyebrow" style="margin-bottom: 2px"
-                    >Sedang Diseduh</span
-                  >
-                  <div class="pname">V60 Gayo Wine Process</div>
-                </div>
-                <div class="pprice">Rp48.000</div>
-              </div>
-            </div>
-            <div class="hero-badge">
-              <img src="logo-cottahaus.png" alt="Cotta Haus" />
-            </div>
-          </div>
-        </div>
+
+      <div class="menu-carousel">
+        <button class="mc-arrow mc-prev" id="mcPrev" aria-label="Sebelumnya">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M15 6l-6 6 6 6" stroke="#17293f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="mc-track" id="mcTrack"></div>
+        <button class="mc-arrow mc-next" id="mcNext" aria-label="Berikutnya">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M9 6l6 6-6 6" stroke="#17293f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
       </div>
 
-      <div class="strip">
-        <div class="wrap">
-          <p>
-            Tambahkan ke keranjang, pilih cabang terdekat, dan pesananmu
-            terkirim otomatis ke <strong>WhatsApp</strong> kami.
-          </p>
-          <p><strong>Tanpa antre, tanpa ribet.</strong></p>
+      <div class="promos-announce">
+        <div class="wrap pa-row">
+          <div>
+            <h2 class="pa-line">Jangan lewatkan promo, atau secangkir kopi 😉</h2>
+          </div>
+          <button class="btn btn-ghost pa-btn" data-nav="order">
+            Lihat Semua Menu
+          </button>
         </div>
       </div>
 
@@ -137,7 +64,6 @@
         <div class="wrap">
           <div class="section-head">
             <div>
-              <span class="eyebrow">Kenapa Cotta Haus</span>
               <h2>Presisi di setiap tahap<br />seduhan.</h2>
             </div>
             <p>
@@ -183,7 +109,6 @@
             />
           </div>
           <div>
-            <span class="eyebrow">Pesan Tanpa Ribet</span>
             <h2 style="font-size: 32px">
               Pesan Favoritmu, <em class="accent">Langsung</em> via WhatsApp
             </h2>
@@ -633,63 +558,6 @@
         </div>
       </div>
     </footer>
-
-    <!-- ================= CART DRAWER ================= -->
-    <div class="overlay" id="overlay"></div>
-    <aside class="cart-drawer" id="cartDrawer">
-      <div class="cart-head">
-        <h3>Keranjang Pesanan</h3>
-        <button class="cart-close" id="closeCart">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M6 6l12 12M18 6L6 18"
-              stroke="#152C46"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
-        </button>
-      </div>
-      <div class="cart-items" id="cartItems"></div>
-      <div class="cart-foot">
-        <label class="field-label">Pilih Cabang</label>
-        <select class="branch-select" id="branchSelect"></select>
-        <label class="field-label">Catatan (opsional)</label>
-        <textarea
-          class="note-field"
-          id="noteField"
-          placeholder="mis. less sugar ya"
-        ></textarea>
-        <div class="total-row"><span>Total</span><b id="cartTotal">Rp0</b></div>
-        <a
-          class="btn checkout-btn"
-          id="checkoutBtn"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2C9.6 22 2 14.4 2 6a2 2 0 012-2z"
-              stroke="#fff"
-              stroke-width="1.6"
-            />
-          </svg>
-          Pesan via WhatsApp
-        </a>
-      </div>
-    </aside>
-    <div class="toast" id="toast">
-      <svg viewBox="0 0 24 24" fill="none">
-        <path
-          d="M20 6L9 17l-5-5"
-          stroke="currentColor"
-          stroke-width="2.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-      <span id="toastText"></span>
-    </div>
 
     <script src="cottaHaus.js"></script>
   </body>

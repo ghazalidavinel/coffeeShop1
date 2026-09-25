@@ -79,6 +79,143 @@ img {
   display: block;
 }
 
+/* ---------- Promo Banner (Starbucks-style campaign header) ---------- */
+.promo-banner {
+  background: var(--paper);
+  padding: 48px 0 8px;
+}
+.pb-head {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.pb-brand {
+  font-family: "Manrope", "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+}
+.pb-brand sup {
+  font-size: 13px;
+}
+.pb-divider {
+  width: 2px;
+  height: 62px;
+  background: var(--line);
+  flex-shrink: 0;
+}
+.pb-campaign {
+  font-family: "Manrope", "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.pb-campaign sup {
+  font-size: 12px;
+}
+
+/* ---------- Promos & Announcements strip ---------- */
+.promos-announce {
+  padding: 46px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.pa-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.pa-line {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: var(--ink);
+  margin-top: 8px;
+}
+.pa-btn {
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .pb-brand {
+    font-size: 28px;
+  }
+  .pb-campaign {
+    font-size: 20px;
+  }
+  .pa-line {
+    font-size: 21px;
+  }
+}
+
+/* ---------- Menu Carousel (full-bleed, 1 photo per slide) ---------- */
+.menu-carousel {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: var(--paper);
+}
+.mc-track {
+  position: relative;
+  width: 100%;
+  height: 860px;
+  overflow: hidden;
+}
+.mc-slide {
+  position: absolute;
+  inset: 0;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+.mc-slide.active {
+  transform: translateX(0);
+  z-index: 2;
+}
+.mc-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.mc-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px -6px rgba(21, 44, 70, 0.35);
+  transition: background 0.2s;
+}
+.mc-arrow:hover {
+  background: #fff;
+}
+.mc-prev {
+  left: 24px;
+}
+.mc-next {
+  right: 24px;
+}
+@media (max-width: 720px) {
+  .mc-track {
+    height: 420px;
+  }
+  .mc-arrow {
+    width: 42px;
+    height: 42px;
+  }
+}
+
 /* ---------- Header ---------- */
 header {
   position: relative;
@@ -136,6 +273,7 @@ nav.mainnav {
   margin-left: 70px;
 }
 nav.mainnav button {
+  font-family: "Manrope", "Inter", sans-serif;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.01em;
