@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cotta Haus — Specialty Coffee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="cottaHaus.css" />
+  </head>
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header>
+      <div class="wrap headbar">
+        <div class="brand">
+          <div class="mark">
+            <img src="logo-cottahaus.png" alt="Cotta Haus" />
+          </div>
+        </div>
+        <nav class="mainnav">
+          <button data-nav="home" class="active">Home</button>
+          <button data-nav="order" data-cat="Espresso Bar">Coffee</button>
+          <button data-nav="order" data-cat="Semua">Menu</button>
+          <button data-nav="about">About Us</button>
+        </nav>
+        <nav class="mainnav mainnav-right">
+          <button data-nav="branches">Find a Store</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Floating cart trigger: cart removed from top bar to match the reference header -->
+    <button class="fab-cart" id="openCart">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M3 4h2l2.6 12.4A2 2 0 009.5 18h7.9a2 2 0 001.96-1.6L21 8H6"
+          stroke="#fff"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <circle cx="10" cy="21" r="1.4" fill="#fff" />
+        <circle cx="18" cy="21" r="1.4" fill="#fff" />
+      </svg>
+      <span class="cart-badge" id="cartCount" style="display: none">0</span>
+    </button>
+
+    <!-- ================= HOME ================= -->
+    <section id="home" class="active">
+      <div class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <span class="eyebrow">Specialty Coffee — Est. 2019</span>
+            <h1>
+              Ruang &amp; Rasa dalam <em class="accent">Harmoni</em> yang
+              Presisi.
+            </h1>
+            <p class="lead">
+              Cotta Haus menyajikan kopi spesialitas nusantara dengan dedikasi
+              pada setiap seduhan — dari biji Gayo hingga Kintamani, disangrai
+              presisi, diseduh dengan tenang.
+            </p>
+            <div class="hero-cta">
+              <button class="btn btn-primary" data-nav="order">
+                Lihat Menu
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M5 12h14M13 6l6 6-6 6"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button class="btn btn-ghost" data-nav="branches">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 22s7-6.1 7-12a7 7 0 10-14 0c0 5.9 7 12 7 12z"
+                    stroke="#152C46"
+                    stroke-width="1.7"
+                  />
+                  <circle
+                    cx="12"
+                    cy="10"
+                    r="2.4"
+                    stroke="#152C46"
+                    stroke-width="1.7"
+                  />
+                </svg>
+                Cari Cabang
+              </button>
+            </div>
+            <div class="stat-row">
+              <div class="stat"><b>05</b><span>Cabang</span></div>
+              <div class="stat"><b>16</b><span>Menu Pilihan</span></div>
+              <div class="stat"><b>04</b><span>Origin Biji</span></div>
+            </div>
+          </div>
+          <div class="hero-art">
+            <div class="hero-photo">
+              <img
+                src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80"
+                alt="Barista menyeduh kopi"
+              />
+              <div class="brewing-card">
+                <div>
+                  <span class="eyebrow" style="margin-bottom: 2px"
+                    >Sedang Diseduh</span
+                  >
+                  <div class="pname">V60 Gayo Wine Process</div>
+                </div>
+                <div class="pprice">Rp48.000</div>
+              </div>
+            </div>
+            <div class="hero-badge">
+              <img src="logo-cottahaus.png" alt="Cotta Haus" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strip">
+        <div class="wrap">
+          <p>
+            Tambahkan ke keranjang, pilih cabang terdekat, dan pesananmu
+            terkirim otomatis ke <strong>WhatsApp</strong> kami.
+          </p>
+          <p><strong>Tanpa antre, tanpa ribet.</strong></p>
+        </div>
+      </div>
+
+      <div class="home-section">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Kenapa Cotta Haus</span>
+              <h2>Presisi di setiap tahap<br />seduhan.</h2>
+            </div>
+            <p>
+              Dari kurasi biji hingga cangkir di tanganmu, setiap langkah dijaga
+              dengan standar yang sama di seluruh cabang.
+            </p>
+          </div>
+          <div class="value-grid">
+            <div class="value-card">
+              <div class="num">01</div>
+              <h3>Biji Pilihan Nusantara</h3>
+              <p>
+                Disourcing langsung dari petani Gayo, Toraja, dan Kintamani,
+                disangrai dalam batch kecil setiap minggu.
+              </p>
+            </div>
+            <div class="value-card">
+              <div class="num">02</div>
+              <h3>Barista Bersertifikat</h3>
+              <p>
+                Setiap head barista cabang melalui kalibrasi harian dan
+                pelatihan Q-Grader untuk konsistensi rasa.
+              </p>
+            </div>
+            <div class="value-card">
+              <div class="num">03</div>
+              <h3>Ruang untuk Berlama</h3>
+              <p>
+                WiFi cepat, stopkontak di tiap meja, dan meeting pod — dirancang
+                untuk kerja maupun bersantai.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-section alt">
+        <div class="wrap feature-band">
+          <div class="feature-photo">
+            <img
+              src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=80"
+              alt="Interior Cotta Haus"
+            />
+          </div>
+          <div>
+            <span class="eyebrow">Pesan Tanpa Ribet</span>
+            <h2 style="font-size: 32px">
+              Pesan Favoritmu, <em class="accent">Langsung</em> via WhatsApp
+            </h2>
+            <ul class="feature-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M20 6L9 17l-5-5"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div>
+                  <b>Pilih menu favoritmu</b><br /><span
+                    >Jelajahi 16 menu pilihan dari lima kategori berbeda.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M20 6L9 17l-5-5"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div>
+                  <b>Tentukan cabang terdekat</b><br /><span
+                    >Cotta Haus hadir di 5 titik, 4 kota di Indonesia.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M20 6L9 17l-5-5"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div>
+                  <b>Kirim langsung ke WhatsApp</b><br /><span
+                    >Rincian pesanan otomatis tersusun rapi, siap kami
+                    proses.</span
+                  >
+                </div>
+              </li>
+            </ul>
+            <div style="margin-top: 30px">
+              <button class="btn btn-primary" data-nav="order">
+                Mulai Pesan
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M5 12h14M13 6l6 6-6 6"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ORDER / MENU ================= -->
+    <section id="order">
+      <div class="wrap order-hero">
+        <div class="order-hero-inner">
+          <div>
+            <span class="eyebrow">Katalog Menu</span>
+            <h1>
+              Pesan Favoritmu, <em class="accent">Langsung</em> via WhatsApp
+            </h1>
+          </div>
+          <p>
+            Tambahkan ke keranjang, pilih cabang terdekat, dan pesananmu
+            terkirim otomatis ke WhatsApp kami. Tanpa antre, tanpa ribet.
+          </p>
+        </div>
+        <div class="cat-row" id="catRow"></div>
+      </div>
+      <div class="wrap">
+        <div class="menu-grid" id="menuGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about">
+      <div class="wrap about-hero">
+        <div class="about-hero-grid">
+          <div>
+            <span class="eyebrow">Tentang Kami</span>
+            <h1>
+              Dibangun dari rasa hormat terhadap
+              <em class="accent">biji kopi</em> dan orang yang menyeduhnya.
+            </h1>
+            <p>
+              Sejak 2019, Cotta Haus berangkat dari satu keyakinan sederhana:
+              kopi terbaik lahir dari kesabaran — pada petani yang merawat biji,
+              pada roaster yang menyangrai presisi, dan pada barista yang
+              menyeduh dengan tenang.
+            </p>
+          </div>
+          <div class="about-photo">
+            <img
+              src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80"
+              alt="Biji kopi Cotta Haus"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap about-story">
+        <div class="story-grid">
+          <div>
+            <span class="eyebrow">Kisah Kami</span>
+            <h2 style="font-size: 26px; line-height: 1.3">
+              Dari satu meja kopi kecil<br />di Senopati.
+            </h2>
+          </div>
+          <div>
+            <p>
+              Cotta Haus dimulai dari sebuah rumah tua di Senopati yang diubah
+              menjadi ruang kopi kecil dengan lima meja. Kami percaya bahwa kopi
+              bukan sekadar minuman, melainkan ruang untuk berhenti sejenak,
+              berpikir jernih, dan terhubung dengan orang-orang di sekitar.
+            </p>
+            <p>
+              Hari ini, Cotta Haus telah tumbuh menjadi lima rumah kopi di empat
+              kota — Jakarta Selatan, Bandung, Bali, dan Yogyakarta — namun
+              filosofi kami tidak berubah: kualitas biji, kenyamanan ruang, dan
+              presisi seduhan di setiap cangkir.
+            </p>
+            <div class="quote-block">
+              <p>
+                “Kami tidak terburu-buru menyeduh kopi yang baik — dan kami
+                tidak ingin kamu terburu-buru menikmatinya.”
+              </p>
+              <span>Tim Cotta Haus</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-values">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Nilai Kami</span>
+              <h2>Tiga hal yang kami<br />jaga di setiap cabang.</h2>
+            </div>
+            <p>Standar yang sama, di mana pun kamu menemukan Cotta Haus.</p>
+          </div>
+          <div class="av-grid">
+            <div class="av-card">
+              <h3>Kualitas Biji</h3>
+              <p>
+                Sourcing langsung dari petani nusantara — Gayo, Toraja,
+                Kintamani, dan Bali — dengan standar cupping ketat.
+              </p>
+            </div>
+            <div class="av-card">
+              <h3>Kenyamanan Ruang</h3>
+              <p>
+                Setiap cabang dirancang dengan karakter lokalnya sendiri, tetap
+                nyaman untuk kerja maupun berkumpul.
+              </p>
+            </div>
+            <div class="av-card">
+              <h3>Presisi Seduhan</h3>
+              <p>
+                Kalibrasi harian, suhu susu presisi 60°C, dan resep yang
+                konsisten dari cabang ke cabang.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BRANCHES ================= -->
+    <section id="branches">
+      <div class="wrap branch-hero">
+        <div class="branch-hero-inner">
+          <div>
+            <span class="eyebrow">Cabang Kami</span>
+            <h1>5 Rumah Kopi, <em class="accent">4 Kota</em></h1>
+          </div>
+          <p>
+            Setiap cabang punya karakternya sendiri. Temukan yang paling dekat
+            dengan harimu.
+          </p>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="branch-grid" id="branchGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= BRANCH DETAIL (reusable template) ================= -->
+    <section id="branch-detail">
+      <div class="wrap bd-top">
+        <button class="bd-back" data-nav="branches">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M19 12H5M11 18l-6-6 6-6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Kembali ke Cabang Kami
+        </button>
+        <div class="bd-head">
+          <div>
+            <h1 id="bdName">—</h1>
+            <div class="branch-tagline" id="bdTagline">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap bd-cols">
+        <div>
+          <div class="info-card">
+            <div class="info-row">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 22s7-6.1 7-12a7 7 0 10-14 0c0 5.9 7 12 7 12z"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                />
+                <circle
+                  cx="12"
+                  cy="10"
+                  r="2.4"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                />
+              </svg>
+              <div><b>Alamat</b><span id="bdAddress"></span></div>
+            </div>
+            <div class="info-row">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                />
+                <path
+                  d="M12 7v5l3.5 2"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <div><b>Jam Operasional</b><span id="bdHours"></span></div>
+            </div>
+            <div class="info-row">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2C9.6 22 2 14.4 2 6a2 2 0 012-2z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+              </svg>
+              <div><b>Kontak</b><span id="bdPhone"></span></div>
+            </div>
+            <div class="info-row">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect
+                  x="3"
+                  y="5"
+                  width="18"
+                  height="15"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+                <path
+                  d="M3 10h18M8 3v4M16 3v4"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <div><b>Kapasitas</b><span id="bdSeats"></span></div>
+            </div>
+          </div>
+
+          <div class="facility-block">
+            <h4>Fasilitas</h4>
+            <div class="pill-row" id="bdFacilities"></div>
+          </div>
+
+          <div class="barista-card">
+            <div class="barista-avatar">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle
+                  cx="12"
+                  cy="8"
+                  r="4"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                />
+                <path
+                  d="M4 21c1.5-4.5 5-6 8-6s6.5 1.5 8 6"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <span class="eyebrow">Head Barista</span>
+              <h4 id="bdBaristaName"></h4>
+              <p id="bdBaristaBio"></p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="signature-card">
+            <span class="eyebrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z"
+                  stroke="#8FB2F0"
+                  stroke-width="1.4"
+                />
+              </svg>
+              Hanya di Cabang Ini
+            </span>
+            <h3 id="bdSigName"></h3>
+            <p id="bdSigDesc"></p>
+          </div>
+
+          <div class="contact-card">
+            <h4>Kunjungi Kami</h4>
+            <a
+              class="btn btn-primary"
+              id="bdWhatsapp"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2C9.6 22 2 14.4 2 6a2 2 0 012-2z"
+                  stroke="#fff"
+                  stroke-width="1.5"
+                />
+              </svg>
+              Chat WhatsApp
+            </a>
+            <a
+              class="btn btn-ghost"
+              id="bdMaps"
+              target="_blank"
+              rel="noopener"
+              style="margin-bottom: 16px"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 22s7-6.1 7-12a7 7 0 10-14 0c0 5.9 7 12 7 12z"
+                  stroke="#152C46"
+                  stroke-width="1.6"
+                />
+              </svg>
+              Buka di Google Maps
+            </a>
+            <button class="link-line" data-nav="order">
+              Pesan online untuk cabang ini
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 17L17 7M9 7h8v8"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap gallery-block">
+        <h4>Galeri Cabang</h4>
+        <div class="gallery-grid" id="bdGallery"></div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <div class="wrap">
+        <div class="foot-grid">
+          <div>
+            <div class="brand">
+              <div class="mark">
+                <img src="logo-cottahaus.png" alt="Cotta Haus" />
+              </div>
+            </div>
+            <p>
+              Kopi spesialitas nusantara — disangrai presisi, diseduh dengan
+              tenang. Lima rumah kopi, satu standar rasa.
+            </p>
+          </div>
+          <div class="foot-col">
+            <h4>Navigasi</h4>
+            <button data-nav="home">Beranda</button>
+            <button data-nav="order">Pesan Online</button>
+            <button data-nav="about">Tentang Kami</button>
+            <button data-nav="branches">Cabang Kami</button>
+          </div>
+          <div class="foot-col">
+            <h4>Kategori Menu</h4>
+            <button data-nav="order" data-cat="Espresso Bar">
+              Espresso Bar
+            </button>
+            <button data-nav="order" data-cat="Manual Brew">Manual Brew</button>
+            <button data-nav="order" data-cat="Artisanal Bakery">
+              Artisanal Bakery
+            </button>
+            <button data-nav="order" data-cat="Main Course">Main Course</button>
+          </div>
+          <div class="foot-col">
+            <h4>Hubungi Kami</h4>
+            <a href="#">hello@cottahaus.id</a>
+            <a href="#">+62 8123-4567-800</a>
+            <a href="#">Instagram @cottahaus.id</a>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <span>© 2026 Cotta Haus. Seluruh hak cipta dilindungi.</span>
+          <span>Dibuat dengan presisi, disajikan dengan hangat.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= CART DRAWER ================= -->
+    <div class="overlay" id="overlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-head">
+        <h3>Keranjang Pesanan</h3>
+        <button class="cart-close" id="closeCart">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M6 6l12 12M18 6L6 18"
+              stroke="#152C46"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-foot">
+        <label class="field-label">Pilih Cabang</label>
+        <select class="branch-select" id="branchSelect"></select>
+        <label class="field-label">Catatan (opsional)</label>
+        <textarea
+          class="note-field"
+          id="noteField"
+          placeholder="mis. less sugar ya"
+        ></textarea>
+        <div class="total-row"><span>Total</span><b id="cartTotal">Rp0</b></div>
+        <a
+          class="btn checkout-btn"
+          id="checkoutBtn"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2C9.6 22 2 14.4 2 6a2 2 0 012-2z"
+              stroke="#fff"
+              stroke-width="1.6"
+            />
+          </svg>
+          Pesan via WhatsApp
+        </a>
+      </div>
+    </aside>
+    <div class="toast" id="toast">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M20 6L9 17l-5-5"
+          stroke="currentColor"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <span id="toastText"></span>
+    </div>
+
+    <script src="cottaHaus.js"></script>
+  </body>
+</html>
