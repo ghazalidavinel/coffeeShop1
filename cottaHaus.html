@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cotta Haus — Specialty Coffee</title>
+    <title>xxxx Coffee Shop — Specialty Coffee</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap"
@@ -17,13 +17,13 @@
       <div class="wrap headbar">
         <div class="brand">
           <div class="mark">
-            <img src="logo-cottahaus.png" alt="Cotta Haus" />
+            <img src="logo-cottahaus.png" alt="xxxx Coffee Shop" />
           </div>
         </div>
         <nav class="mainnav">
           <button data-nav="home" class="active">Home</button>
-          <button data-nav="order" data-cat="Espresso Bar">Coffee</button>
-          <button data-nav="order" data-cat="Semua">Menu</button>
+          <button data-nav="order" data-view="coffee">Coffee</button>
+          <button data-nav="order" data-view="menu">Menu</button>
           <button data-nav="about">About Us</button>
         </nav>
         <nav class="mainnav mainnav-right">
@@ -52,10 +52,10 @@
       <div class="promos-announce">
         <div class="wrap pa-row">
           <div>
-            <h2 class="pa-line">Jangan lewatkan promo, atau secangkir kopi 😉</h2>
+            <h2 class="pa-line">Ambil kopimu 😉</h2>
           </div>
           <button class="btn btn-ghost pa-btn" data-nav="order">
-            Lihat Semua Menu
+            Pilihan Kopi Terbaik
           </button>
         </div>
       </div>
@@ -64,139 +64,39 @@
         <div class="wrap">
           <div class="section-head">
             <div>
-              <h2>Presisi di setiap tahap<br />seduhan.</h2>
+              <h2>5 Rumah Kopi,<br />5 Kota.</h2>
             </div>
             <p>
-              Dari kurasi biji hingga cangkir di tanganmu, setiap langkah dijaga
-              dengan standar yang sama di seluruh cabang.
+              Temukan xxxx Coffee Shop terdekat dari tempatmu — setiap cabang punya
+              karakternya sendiri.
             </p>
           </div>
-          <div class="value-grid">
-            <div class="value-card">
-              <div class="num">01</div>
-              <h3>Biji Pilihan Nusantara</h3>
-              <p>
-                Disourcing langsung dari petani Gayo, Toraja, dan Kintamani,
-                disangrai dalam batch kecil setiap minggu.
-              </p>
-            </div>
-            <div class="value-card">
-              <div class="num">02</div>
-              <h3>Barista Bersertifikat</h3>
-              <p>
-                Setiap head barista cabang melalui kalibrasi harian dan
-                pelatihan Q-Grader untuk konsistensi rasa.
-              </p>
-            </div>
-            <div class="value-card">
-              <div class="num">03</div>
-              <h3>Ruang untuk Berlama</h3>
-              <p>
-                WiFi cepat, stopkontak di tiap meja, dan meeting pod — dirancang
-                untuk kerja maupun bersantai.
-              </p>
-            </div>
-          </div>
+          <div class="branch-grid" id="homeBranchGrid"></div>
         </div>
       </div>
+    </section>
 
-      <div class="home-section alt">
-        <div class="wrap feature-band">
-          <div class="feature-photo">
-            <img
-              src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=80"
-              alt="Interior Cotta Haus"
-            />
-          </div>
+    <section id="branches">
+      <div class="wrap branch-hero">
+        <div class="branch-hero-inner">
           <div>
-            <h2 style="font-size: 32px">
-              Pesan Favoritmu, <em class="accent">Langsung</em> via WhatsApp
-            </h2>
-            <ul class="feature-list">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M20 6L9 17l-5-5"
-                    stroke="currentColor"
-                    stroke-width="2.2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                <div>
-                  <b>Pilih menu favoritmu</b><br /><span
-                    >Jelajahi 16 menu pilihan dari lima kategori berbeda.</span
-                  >
-                </div>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M20 6L9 17l-5-5"
-                    stroke="currentColor"
-                    stroke-width="2.2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                <div>
-                  <b>Tentukan cabang terdekat</b><br /><span
-                    >Cotta Haus hadir di 5 titik, 4 kota di Indonesia.</span
-                  >
-                </div>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M20 6L9 17l-5-5"
-                    stroke="currentColor"
-                    stroke-width="2.2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                <div>
-                  <b>Kirim langsung ke WhatsApp</b><br /><span
-                    >Rincian pesanan otomatis tersusun rapi, siap kami
-                    proses.</span
-                  >
-                </div>
-              </li>
-            </ul>
-            <div style="margin-top: 30px">
-              <button class="btn btn-primary" data-nav="order">
-                Mulai Pesan
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M5 12h14M13 6l6 6-6 6"
-                    stroke="#fff"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
+            <span class="eyebrow">Cabang Kami</span>
+            <h1>5 Rumah Kopi, <em class="accent">5 Kota</em></h1>
           </div>
+          <p>
+            Setiap cabang punya karakternya sendiri. Temukan yang paling dekat
+            dengan harimu.
+          </p>
         </div>
+      </div>
+      <div class="wrap">
+        <div class="branch-grid" id="branchGrid"></div>
       </div>
     </section>
 
     <!-- ================= ORDER / MENU ================= -->
     <section id="order">
       <div class="wrap order-hero">
-        <div class="order-hero-inner">
-          <div>
-            <span class="eyebrow">Katalog Menu</span>
-            <h1>
-              Pesan Favoritmu, <em class="accent">Langsung</em> via WhatsApp
-            </h1>
-          </div>
-          <p>
-            Tambahkan ke keranjang, pilih cabang terdekat, dan pesananmu
-            terkirim otomatis ke WhatsApp kami. Tanpa antre, tanpa ribet.
-          </p>
-        </div>
         <div class="cat-row" id="catRow"></div>
       </div>
       <div class="wrap">
@@ -209,13 +109,12 @@
       <div class="wrap about-hero">
         <div class="about-hero-grid">
           <div>
-            <span class="eyebrow">Tentang Kami</span>
             <h1>
               Dibangun dari rasa hormat terhadap
               <em class="accent">biji kopi</em> dan orang yang menyeduhnya.
             </h1>
             <p>
-              Sejak 2019, Cotta Haus berangkat dari satu keyakinan sederhana:
+              Sejak 2019, xxxx Coffee Shop berangkat dari satu keyakinan sederhana:
               kopi terbaik lahir dari kesabaran — pada petani yang merawat biji,
               pada roaster yang menyangrai presisi, dan pada barista yang
               menyeduh dengan tenang.
@@ -224,7 +123,7 @@
           <div class="about-photo">
             <img
               src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80"
-              alt="Biji kopi Cotta Haus"
+              alt="Biji kopi xxxx Coffee Shop"
             />
           </div>
         </div>
@@ -233,21 +132,20 @@
       <div class="wrap about-story">
         <div class="story-grid">
           <div>
-            <span class="eyebrow">Kisah Kami</span>
             <h2 style="font-size: 26px; line-height: 1.3">
-              Dari satu meja kopi kecil<br />di Senopati.
+              Dari satu meja kopi kecil<br />di Tangerang.
             </h2>
           </div>
           <div>
             <p>
-              Cotta Haus dimulai dari sebuah rumah tua di Senopati yang diubah
+              xxxx Coffee Shop dimulai dari sebuah rumah tua di Tangerang yang diubah
               menjadi ruang kopi kecil dengan lima meja. Kami percaya bahwa kopi
               bukan sekadar minuman, melainkan ruang untuk berhenti sejenak,
               berpikir jernih, dan terhubung dengan orang-orang di sekitar.
             </p>
             <p>
-              Hari ini, Cotta Haus telah tumbuh menjadi lima rumah kopi di empat
-              kota — Jakarta Selatan, Bandung, Bali, dan Yogyakarta — namun
+              Hari ini, xxxx Coffee Shop telah tumbuh menjadi lima rumah kopi di lima
+              kota — Tangerang, Bekasi, Purwakarta, Pamulang, dan Bandung — namun
               filosofi kami tidak berubah: kualitas biji, kenyamanan ruang, dan
               presisi seduhan di setiap cangkir.
             </p>
@@ -256,7 +154,7 @@
                 “Kami tidak terburu-buru menyeduh kopi yang baik — dan kami
                 tidak ingin kamu terburu-buru menikmatinya.”
               </p>
-              <span>Tim Cotta Haus</span>
+              <span>Tim xxxx Coffee Shop</span>
             </div>
           </div>
         </div>
@@ -269,7 +167,7 @@
               <span class="eyebrow">Nilai Kami</span>
               <h2>Tiga hal yang kami<br />jaga di setiap cabang.</h2>
             </div>
-            <p>Standar yang sama, di mana pun kamu menemukan Cotta Haus.</p>
+            <p>Standar yang sama, di mana pun kamu menemukan xxxx Coffee Shop.</p>
           </div>
           <div class="av-grid">
             <div class="av-card">
@@ -299,23 +197,6 @@
     </section>
 
     <!-- ================= BRANCHES ================= -->
-    <section id="branches">
-      <div class="wrap branch-hero">
-        <div class="branch-hero-inner">
-          <div>
-            <span class="eyebrow">Cabang Kami</span>
-            <h1>5 Rumah Kopi, <em class="accent">4 Kota</em></h1>
-          </div>
-          <p>
-            Setiap cabang punya karakternya sendiri. Temukan yang paling dekat
-            dengan harimu.
-          </p>
-        </div>
-      </div>
-      <div class="wrap">
-        <div class="branch-grid" id="branchGrid"></div>
-      </div>
-    </section>
 
     <!-- ================= BRANCH DETAIL (reusable template) ================= -->
     <section id="branch-detail">
@@ -519,7 +400,7 @@
           <div>
             <div class="brand">
               <div class="mark">
-                <img src="logo-cottahaus.png" alt="Cotta Haus" />
+                <img src="logo-cottahaus.png" alt="xxxx Coffee Shop" />
               </div>
             </div>
             <p>
@@ -553,7 +434,7 @@
           </div>
         </div>
         <div class="foot-bottom">
-          <span>© 2026 Cotta Haus. Seluruh hak cipta dilindungi.</span>
+          <span>© 2026 xxxx Coffee Shop. Seluruh hak cipta dilindungi.</span>
           <span>Dibuat dengan presisi, disajikan dengan hangat.</span>
         </div>
       </div>

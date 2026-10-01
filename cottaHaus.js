@@ -8,7 +8,7 @@ const MENU = [
     img: "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=500&q=80",
   },
   {
-    name: "Cotta Haus Signature Latte",
+    name: "xxxx Coffee Shop Signature Latte",
     cat: "Espresso Bar",
     price: 42000,
     tag: "Signature",
@@ -116,22 +116,19 @@ const MENU = [
     img: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=500&q=80",
   },
 ];
-const CATEGORIES = [
-  "Semua",
-  "Espresso Bar",
-  "Manual Brew",
-  "Non-Coffee & Tea",
-  "Artisanal Bakery",
-  "Main Course",
-];
+const COFFEE_CATS = ["Espresso Bar", "Manual Brew"];
+const VIEW_CATEGORIES = {
+  coffee: ["Semua", "Espresso Bar", "Manual Brew"],
+  menu: ["Semua", "Non-Coffee & Tea", "Artisanal Bakery", "Main Course"],
+};
 
 const BRANCHES = [
   {
-    id: "senopati",
-    name: "Cotta Haus Senopati",
-    city: "Jakarta Selatan",
+    id: "tangerang",
+    name: "xxxx Coffee Shop Tangerang",
+    city: "Tangerang",
     tagline: "Signature Glasshouse Lounge & Manual Brew Bar",
-    address: "Jl. Suryo No. 28, Senopati, Jakarta Selatan",
+    address: "Jl. MH Thamrin No. 12, Tangerang",
     hours: "07:00 - 22:00 WIB",
     phone: "+62 8123-4567-801",
     seats: "85 kursi (Indoor AC + Area Semi-Outdoor)",
@@ -143,12 +140,12 @@ const BRANCHES = [
       "Pet Friendly (Outdoor)",
       "Smoking Area",
     ],
-    sigName: "Senopati Blue Cloud Espresso",
+    sigName: "Tangerang Blue Cloud Espresso",
     sigDesc:
-      "Espresso, susu oat infused bunga telang biru, dan vanilla salt cream. Hanya tersedia di cabang Senopati.",
+      "Espresso, susu oat infused bunga telang biru, dan vanilla salt cream. Hanya tersedia di cabang Tangerang.",
     baristaName: "Dimas Nugraha — Q-Grader Certified",
     baristaBio:
-      "8 tahun di industri specialty coffee, finalis Indonesia Brewers Cup 2024. Dimas memimpin kurasi biji dan kalibrasi harian di bar Senopati.",
+      "8 tahun di industri specialty coffee, finalis Indonesia Brewers Cup 2024. Dimas memimpin kurasi biji dan kalibrasi harian di bar Tangerang.",
     cover:
       "https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=800&q=80",
     gallery: [
@@ -158,11 +155,11 @@ const BRANCHES = [
     ],
   },
   {
-    id: "dharmawangsa",
-    name: "Cotta Haus Dharmawangsa",
-    city: "Jakarta Selatan",
+    id: "bekasi",
+    name: "xxxx Coffee Shop Bekasi",
+    city: "Bekasi",
     tagline: "Serene Garden Terrace & Roastery Corner",
-    address: "Jl. Dharmawangsa VIII No. 12, Jakarta Selatan",
+    address: "Jl. Ahmad Yani No. 45, Bekasi",
     hours: "07:30 - 21:00 WIB",
     phone: "+62 8123-4567-802",
     seats: "60 kursi (Garden Terrace + Indoor)",
@@ -174,12 +171,12 @@ const BRANCHES = [
       "Kids Corner",
       "Free Parking",
     ],
-    sigName: "Dharmawangsa Garden Cascara Fizz",
+    sigName: "Bekasi Garden Cascara Fizz",
     sigDesc:
-      "Cascara kering diseduh cold brew, soda, dan daun mint dari taman kami sendiri. Hanya tersedia di cabang Dharmawangsa.",
+      "Cascara kering diseduh cold brew, soda, dan daun mint dari taman kami sendiri. Hanya tersedia di cabang Bekasi.",
     baristaName: "Rani Kusuma — Latte Art Specialist",
     baristaBio:
-      "6 tahun meracik signature drink, mengelola sudut roastery mini di cabang Dharmawangsa.",
+      "6 tahun meracik signature drink, mengelola sudut roastery mini di cabang Bekasi.",
     cover:
       "https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=800&q=80",
     gallery: [
@@ -190,7 +187,7 @@ const BRANCHES = [
   },
   {
     id: "riau-bandung",
-    name: "Cotta Haus Riau Bandung",
+    name: "xxxx Coffee Shop Bandung",
     city: "Bandung",
     tagline: "Heritage Colonial Villa & Indoor Botanical Courtyard",
     address: "Jl. L.L.R.E. Martadinata (Riau) No. 85, Bandung",
@@ -207,7 +204,7 @@ const BRANCHES = [
     ],
     sigName: "Riau Heritage Kopi Susu Gula Aren",
     sigDesc:
-      "Racikan kopi susu klasik dengan gula aren Priangan, disajikan dalam cangkir vintage. Hanya tersedia di cabang Riau Bandung.",
+      "Racikan kopi susu klasik dengan gula aren Priangan, disajikan dalam cangkir vintage. Hanya tersedia di cabang Bandung.",
     baristaName: "Bayu Pratama — Roastmaster",
     baristaBio:
       "10 tahun pengalaman roasting, mengawasi profil sangrai seluruh cabang dari Bandung.",
@@ -220,28 +217,28 @@ const BRANCHES = [
     ],
   },
   {
-    id: "canggu-bali",
-    name: "Cotta Haus Canggu Bali",
-    city: "Bali",
+    id: "purwakarta",
+    name: "xxxx Coffee Shop Purwakarta",
+    city: "Purwakarta",
     tagline: "Tropical Courtyard & Open-Air Roastery",
-    address: "Jl. Pantai Batu Bolong No. 45, Canggu, Bali",
+    address: "Jl. Veteran No. 20, Purwakarta",
     hours: "07:00 - 23:00 WIB",
     phone: "+62 8123-4567-804",
     seats: "90 kursi (Open-Air Courtyard)",
     facilities: [
       "WiFi 500 Mbps",
       "Open-Air Courtyard",
-      "Surfboard Rack",
-      "Beach Towel Rental",
+      "Live Music (Weekend)",
+      "Kids Corner",
       "Pet Friendly",
       "Vegan Menu Options",
     ],
-    sigName: "Canggu Coconut Cold Brew",
+    sigName: "Purwakarta Coconut Cold Brew",
     sigDesc:
-      "Cold brew 18 jam, santan segar Bali, sedikit gula kelapa. Hanya tersedia di cabang Canggu.",
+      "Cold brew 18 jam, santan segar Bali, sedikit gula kelapa. Hanya tersedia di cabang Purwakarta.",
     baristaName: "Made Wirawan — Sustainability Lead",
     baristaBio:
-      "7 tahun di industri kopi, memimpin praktik zero-waste dan sourcing biji berkelanjutan di Bali.",
+      "7 tahun di industri kopi, memimpin praktik zero-waste dan sourcing biji berkelanjutan di Purwakarta.",
     cover:
       "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&w=800&q=80",
     gallery: [
@@ -251,28 +248,28 @@ const BRANCHES = [
     ],
   },
   {
-    id: "malioboro-yogyakarta",
-    name: "Cotta Haus Malioboro Yogyakarta",
-    city: "Yogyakarta",
-    tagline: "Vintage Espresso Bar & Batik Wall Gallery",
-    address: "Jl. Malioboro No. 22, Yogyakarta",
+    id: "pamulang",
+    name: "xxxx Coffee Shop Pamulang",
+    city: "Pamulang",
+    tagline: "Vintage Espresso Bar & Reading Corner",
+    address: "Jl. Siliwangi No. 8, Pamulang",
     hours: "07:00 - 21:30 WIB",
     phone: "+62 8123-4567-805",
     seats: "50 kursi (Indoor Vintage Lounge)",
     facilities: [
       "WiFi 300 Mbps",
-      "Batik Art Gallery Wall",
-      "Gamelan Akustik (Weekend)",
+      "Reading Corner",
+      "Live Akustik (Weekend)",
       "Free Parking",
       "Musholla",
       "Charging Station",
     ],
-    sigName: "Malioboro Jahe Rempah Latte",
+    sigName: "Pamulang Jahe Rempah Latte",
     sigDesc:
-      "Espresso, susu, jahe merah, dan rempah nusantara — hangat dan menenangkan. Hanya tersedia di cabang Malioboro.",
+      "Espresso, susu, jahe merah, dan rempah nusantara — hangat dan menenangkan. Hanya tersedia di cabang Pamulang.",
     baristaName: "Sari Handayani — Community Trainer",
     baristaBio:
-      "5 tahun mengajar barista pemula, aktif di komunitas kopi Yogyakarta.",
+      "5 tahun mengajar barista pemula, aktif di komunitas kopi Pamulang.",
     cover:
       "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80",
     gallery: [
@@ -286,6 +283,7 @@ const BRANCHES = [
 const WA_NUMBER = "628123456780"; // nomor WhatsApp toko (contoh)
 
 /* ===================== STATE ===================== */
+let orderView = "coffee"; // "coffee" | "menu"
 let activeCat = "Semua";
 
 /* ===================== NAV ===================== */
@@ -295,15 +293,23 @@ function showSection(id) {
     .forEach((s) => s.classList.remove("active"));
   document.getElementById(id).classList.add("active");
   document.querySelectorAll("nav.mainnav button").forEach((b) => {
-    b.classList.toggle("active", b.dataset.nav === id);
+    const isCurrent =
+      b.dataset.nav === id &&
+      (!b.dataset.view || b.dataset.view === orderView);
+    b.classList.toggle("active", isCurrent);
   });
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 document.querySelectorAll("[data-nav]").forEach((el) => {
   el.addEventListener("click", () => {
     const id = el.dataset.nav;
-    if (el.dataset.cat) {
+    if (el.dataset.view) {
+      orderView = el.dataset.view;
+      activeCat = "Semua";
+      renderMenu();
+    } else if (el.dataset.cat) {
       activeCat = el.dataset.cat;
+      orderView = COFFEE_CATS.includes(activeCat) ? "coffee" : "menu";
       renderMenu();
     }
     if (id === "branch-detail") return;
@@ -318,10 +324,12 @@ function fmt(n) {
 
 function renderCategories() {
   const row = document.getElementById("catRow");
-  row.innerHTML = CATEGORIES.map(
-    (c) =>
-      `<button class="cat-pill ${c === activeCat ? "active" : ""}" data-cat="${c}">${c}</button>`,
-  ).join("");
+  row.innerHTML = VIEW_CATEGORIES[orderView]
+    .map(
+      (c) =>
+        `<button class="cat-pill ${c === activeCat ? "active" : ""}" data-cat="${c}">${c}</button>`,
+    )
+    .join("");
   row.querySelectorAll(".cat-pill").forEach((b) => {
     b.addEventListener("click", () => {
       activeCat = b.dataset.cat;
@@ -333,8 +341,12 @@ function renderCategories() {
 function renderMenu() {
   renderCategories();
   const grid = document.getElementById("menuGrid");
-  const items =
-    activeCat === "Semua" ? MENU : MENU.filter((m) => m.cat === activeCat);
+  const pool = MENU.filter((m) =>
+    orderView === "coffee"
+      ? COFFEE_CATS.includes(m.cat)
+      : !COFFEE_CATS.includes(m.cat),
+  );
+  const items = activeCat === "Semua" ? pool : pool.filter((m) => m.cat === activeCat);
   grid.innerHTML = items
     .map(
       (m) => `
@@ -347,9 +359,6 @@ function renderMenu() {
       <div class="menu-body">
         <h3>${m.name}</h3>
         <p>${m.desc}</p>
-        <div class="menu-foot">
-          <span class="price">${fmt(m.price)}</span>
-        </div>
       </div>
     </div>
   `,
@@ -359,8 +368,7 @@ function renderMenu() {
 
 /* ===================== BRANCH LIST ===================== */
 function renderBranchGrid() {
-  const grid = document.getElementById("branchGrid");
-  grid.innerHTML = BRANCHES.map(
+  const cardsHTML = BRANCHES.map(
     (b) => `
     <div class="branch-card">
       <div class="branch-photo">
@@ -396,8 +404,14 @@ function renderBranchGrid() {
     </div>
   `,
   ).join("");
-  grid.querySelectorAll("[data-branch]").forEach((b) => {
-    b.addEventListener("click", () => renderBranchDetail(b.dataset.branch));
+
+  ["branchGrid", "homeBranchGrid"].forEach((gridId) => {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    grid.innerHTML = cardsHTML;
+    grid.querySelectorAll("[data-branch]").forEach((b) => {
+      b.addEventListener("click", () => renderBranchDetail(b.dataset.branch));
+    });
   });
 }
 
@@ -430,7 +444,7 @@ function renderBranchDetail(id) {
     )
     .join("");
   document.getElementById("bdWhatsapp").href =
-    `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Halo Cotta Haus " + b.name + ", saya ingin bertanya-tanya.")}`;
+    `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Halo xxxx Coffee Shop " + b.name + ", saya ingin bertanya-tanya.")}`;
   document.getElementById("bdMaps").href =
     `https://www.google.com/maps/search/${encodeURIComponent(b.name + " " + b.address)}`;
   showSection("branch-detail");
@@ -451,7 +465,7 @@ function renderMenuCarousel() {
     .map(
       (img, i) => `
     <div class="mc-slide${i === 0 ? " active" : ""}">
-      <img src="${img}" alt="Cotta Haus" />
+      <img src="${img}" alt="xxxx Coffee Shop" />
     </div>`,
     )
     .join("");
